@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Wholesale Green Co | Wholesale Plants Australia",
   description:
-    "Premium wholesale plant catalogue for trade buyers, landscapers, retailers, designers and bulk buyers across Australia.",
+    "Premium wholesale plant catalogue for trade buyers, landscapers, retailers and bulk buyers across Australia.",
   keywords: [
     "wholesale plants Australia",
     "wholesale tissue culture plants",

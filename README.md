@@ -1,16 +1,20 @@
-# Wholesale Green Co Real Functional V3 Premium
+# Wholesale Green Co Greenridge Style V4
 
-This is the premium real-coded website version, not a screenshot mockup and not the earlier illustrated layout.
+This is the correct Greenridge-style real-coded version.
+
+Confirm correct upload:
+- app/page.tsx must contain: export default function WholesaleGreenCoGreenridgeV4()
+- It must NOT contain: PremiumWholesalePlantDemo
+- It must NOT use /screens/home.png, /screens/catalogue.png, or screenshot prototype files.
 
 Includes:
-- Premium Greenridge-style hero layout
-- Real responsive menu
+- Real responsive Greenridge-style layout
 - Working navigation
 - Working search
 - Working filters
-- Working product details
+- Working product detail modal
 - Working approved buyer pricing
-- Working cart
+- Working cart drawer
 - Supabase trade application saving
 - Supabase quote request saving
 
