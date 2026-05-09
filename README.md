@@ -1,13 +1,16 @@
-# Greenridge Exact Demo V2 - Vercel
+# Wholesale Green Co Supabase Connected V1
 
-This version uses the exact Greenridge Single-File Exact Demo V2 screens.
+This replacement package connects your live website to Supabase.
 
-Upload all files to GitHub and Vercel will redeploy.
+## Required Vercel Environment Variables
 
-Important folders:
-- app/page.tsx
-- app/layout.tsx
-- app/globals.css
-- public/screens/home.png
-- public/screens/catalogue.png
-- public/screens/detail.png
+NEXT_PUBLIC_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+## Supabase tables used
+
+trade_applications
+quote_requests
+quote_items
+
+Upload the contents to GitHub. Vercel will redeploy automatically.
