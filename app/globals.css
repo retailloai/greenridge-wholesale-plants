@@ -9,3 +9,7 @@ html {
 body {
   background: #fbfaf5;
 }
+
+* {
+  box-sizing: border-box;
+}

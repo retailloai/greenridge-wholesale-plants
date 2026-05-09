@@ -1,15 +1,16 @@
-# Wholesale Green Co Real Functional V2
+# Wholesale Green Co Real Functional V3 Premium
 
-This is the proper real website version, not a screenshot mockup.
+This is the premium real-coded website version, not a screenshot mockup and not the earlier illustrated layout.
 
-It includes:
-- Real responsive layout
-- Working top navigation
-- Working plant search
-- Working category filters
-- Working product detail modal
-- Working approved buyer toggle
-- Working cart drawer
+Includes:
+- Premium Greenridge-style hero layout
+- Real responsive menu
+- Working navigation
+- Working search
+- Working filters
+- Working product details
+- Working approved buyer pricing
+- Working cart
 - Supabase trade application saving
 - Supabase quote request saving
 
