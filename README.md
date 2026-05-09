@@ -1,16 +1,13 @@
-# Wholesale Green Co Supabase Connected V1
+# Wholesale Green Co Clean Live V1
 
-This replacement package connects your live website to Supabase.
+This version removes all ChatGPT/demo feedback controls from the public website.
 
-## Required Vercel Environment Variables
+It keeps:
+- Clean visual V2 template
+- Clickable public homepage, catalogue and detail flow
+- Trade application form connected to Supabase
+- Quote request form connected to Supabase
 
-NEXT_PUBLIC_SUPABASE_URL
-NEXT_PUBLIC_SUPABASE_ANON_KEY
-
-## Supabase tables used
-
-trade_applications
-quote_requests
-quote_items
-
-Upload the contents to GitHub. Vercel will redeploy automatically.
+Required Vercel environment variables:
+- NEXT_PUBLIC_SUPABASE_URL
+- NEXT_PUBLIC_SUPABASE_ANON_KEY

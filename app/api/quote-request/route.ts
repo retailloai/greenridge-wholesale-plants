@@ -1,17 +1,10 @@
 import { NextResponse } from "next/server";
 import { supabase } from "@/app/lib/supabase";
 
-type IncomingItem = {
-  product_name: string;
-  quantity: number;
-  trade_price: number;
-  project_price: number;
-};
-
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const items: IncomingItem[] = Array.isArray(body.items) ? body.items : [];
+    const items = Array.isArray(body.items) ? body.items : [];
 
     if (!body.buyer_email) {
       return NextResponse.json({ ok: false, error: "Buyer email is required." }, { status: 400 });
@@ -21,8 +14,8 @@ export async function POST(request: Request) {
       return NextResponse.json({ ok: false, error: "Please add at least one plant to quote." }, { status: 400 });
     }
 
-    const totalPlants = items.reduce((sum, item) => sum + Number(item.quantity || 0), 0);
-    const estimatedTotal = items.reduce((sum, item) => sum + Number(item.quantity || 0) * Number(item.trade_price || 0), 0);
+    const totalPlants = items.reduce((sum: number, item: any) => sum + Number(item.quantity || 0), 0);
+    const estimatedTotal = items.reduce((sum: number, item: any) => sum + Number(item.quantity || 0) * Number(item.trade_price || 0), 0);
 
     const { data: quote, error: quoteError } = await supabase
       .from("quote_requests")
@@ -42,7 +35,7 @@ export async function POST(request: Request) {
 
     if (quoteError) return NextResponse.json({ ok: false, error: quoteError.message }, { status: 500 });
 
-    const rows = items.map((item) => ({
+    const rows = items.map((item: any) => ({
       quote_request_id: quote.id,
       product_name: item.product_name,
       quantity: Number(item.quantity || 0),
@@ -52,7 +45,6 @@ export async function POST(request: Request) {
     }));
 
     const { error: itemError } = await supabase.from("quote_items").insert(rows);
-
     if (itemError) return NextResponse.json({ ok: false, error: itemError.message }, { status: 500 });
 
     return NextResponse.json({ ok: true, id: quote.id });

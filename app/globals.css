@@ -1,6 +1,197 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+* {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
-body { background: #fbfaf5; }
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #fbfaf5;
+  color: #123126;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+.clean-page {
+  min-height: 100vh;
+  background: #fbfaf5;
+}
+
+.screen-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #fbfaf5;
+}
+
+.screen-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.hotspot {
+  position: absolute;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.hotspot:hover {
+  background: rgba(8, 68, 51, 0.08);
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(7, 44, 33, 0.55);
+  backdrop-filter: blur(7px);
+}
+
+.modal-card {
+  width: min(760px, 94vw);
+  max-height: 92vh;
+  overflow: auto;
+  background: #fffef8;
+  border-radius: 26px;
+  padding: 28px;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+}
+
+.modal-mini {
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6a7c72;
+  margin-bottom: 8px;
+}
+
+.modal-card h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  margin: 0;
+  color: #074433;
+  font-size: 34px;
+  line-height: 1.1;
+}
+
+.modal-card p {
+  color: #53635a;
+  line-height: 1.7;
+  margin: 14px 0 0;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.form-grid input,
+.form-grid select,
+.form-grid textarea {
+  width: 100%;
+  border: 1px solid rgba(13, 49, 35, 0.12);
+  background: white;
+  border-radius: 14px;
+  padding: 13px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #123126;
+}
+
+.form-grid textarea {
+  min-height: 90px;
+  grid-column: span 2;
+}
+
+.cart-preview,
+.status-box {
+  margin-top: 16px;
+  background: #edf5e8;
+  border: 1px solid rgba(13, 49, 35, 0.12);
+  color: #074433;
+  padding: 14px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.btn {
+  cursor: pointer;
+  background: white;
+  border: 1px solid rgba(13, 49, 35, 0.12);
+  color: #074433;
+  padding: 12px 15px;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.btn.dark {
+  background: linear-gradient(135deg, #0a6b4e, #073b31);
+  color: white;
+  border-color: transparent;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hidden-nav {
+  position: fixed;
+  right: 14px;
+  bottom: 14px;
+  z-index: 80;
+  display: flex;
+  gap: 8px;
+  opacity: 0.16;
+  transition: opacity 0.2s ease;
+}
+
+.hidden-nav:hover {
+  opacity: 1;
+}
+
+.hidden-nav button {
+  border: 0;
+  background: #074433;
+  color: white;
+  border-radius: 999px;
+  padding: 8px 11px;
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid textarea {
+    grid-column: span 1;
+  }
+}

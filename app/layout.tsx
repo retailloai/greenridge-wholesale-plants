@@ -2,26 +2,26 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Wholesale Green Co | Wholesale Plants Australia",
-  description: "Premium wholesale plant catalogue for trade buyers, landscapers, retailers and bulk buyers across Australia.",
-  keywords: ["wholesale plants Australia", "wholesale tissue culture plants", "wholesale indoor plants", "bulk landscape plants", "trade plant supplier Melbourne"],
+  title: "Greenridge Wholesale Plants | Trade Plant Supplier Australia",
+  description:
+    "Premium wholesale plant website prototype for trade buyers with approved buyer catalogue, product detail, trade application and quote request flow.",
+  keywords: [
+    "wholesale plants Australia",
+    "wholesale tissue culture plants",
+    "trade plant supplier",
+    "wholesale indoor plants",
+    "bulk landscape plants",
+  ],
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "WholesaleStore",
-    name: "Wholesale Green Co",
-    url: "https://www.wholesalegreenco.com",
-    areaServed: ["Melbourne", "Victoria", "Australia"],
-  };
-
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
