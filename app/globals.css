@@ -12,6 +12,9 @@ body {
     Arial, sans-serif;
 }
 
-button {
+button,
+input,
+textarea,
+select {
   font-family: inherit;
 }
