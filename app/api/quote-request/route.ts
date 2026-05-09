@@ -15,7 +15,10 @@ export async function POST(request: Request) {
     }
 
     const totalPlants = items.reduce((sum: number, item: any) => sum + Number(item.quantity || 0), 0);
-    const estimatedTotal = items.reduce((sum: number, item: any) => sum + Number(item.quantity || 0) * Number(item.trade_price || 0), 0);
+    const estimatedTotal = items.reduce(
+      (sum: number, item: any) => sum + Number(item.quantity || 0) * Number(item.trade_price || 0),
+      0
+    );
 
     const { data: quote, error: quoteError } = await supabase
       .from("quote_requests")
@@ -45,6 +48,7 @@ export async function POST(request: Request) {
     }));
 
     const { error: itemError } = await supabase.from("quote_items").insert(rows);
+
     if (itemError) return NextResponse.json({ ok: false, error: itemError.message }, { status: 500 });
 
     return NextResponse.json({ ok: true, id: quote.id });

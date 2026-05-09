@@ -1,12 +1,17 @@
-# Wholesale Green Co Clean Live V1
+# Wholesale Green Co Real Functional V2
 
-This version removes all ChatGPT/demo feedback controls from the public website.
+This is the proper real website version, not a screenshot mockup.
 
-It keeps:
-- Clean visual V2 template
-- Clickable public homepage, catalogue and detail flow
-- Trade application form connected to Supabase
-- Quote request form connected to Supabase
+It includes:
+- Real responsive layout
+- Working top navigation
+- Working plant search
+- Working category filters
+- Working product detail modal
+- Working approved buyer toggle
+- Working cart drawer
+- Supabase trade application saving
+- Supabase quote request saving
 
 Required Vercel environment variables:
 - NEXT_PUBLIC_SUPABASE_URL
